@@ -53,12 +53,16 @@ int main(int argc, char **argv)
                 if data[it.key()] == "Insert"
                 {
                     count = count + 1;
-                    bob[it.key()][to_string(count)] = data[it.key()];
                     bob[it.key()]["key"] = {data[it.key()]};
                     bob[it.key()]["operation"] = {data[it.key()]};
                     //cout << data[it.key()][i] << "  " << data[it.key()][i + 1] << endl;
                 }
             }
+
+        if (count > 0){
+            bob[it.key()][to_string(count)] = data[it.key()];
+            num++;
+        }
     }
     
     // metadata, field = value
